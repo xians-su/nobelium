@@ -75,21 +75,10 @@ const Header = ({ navBarTitle, fullWidth }) => {
               
 //              <div className="h-6">
 //                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" >
-//                  <rect
-//                    width="24"
-//                    height="24"
-//                    className="fill-current text-black dark:text-white"
-//                  />
+//                  <rect width="24" height="24" className="fill-current text-black dark:text-white" />
 //                  <rect width="24" height="24" fill="url(#paint0_radial)" />
 //                  <defs>
-//                    <radialGradient
-//                      id="paint0_radial"
-//                      cx="0"
-//                      cy="0"
-//                      r="1"
-//                      gradientUnits="userSpaceOnUse"
-//                      gradientTransform="rotate(45) scale(39.598)"
-//                    >
+//                    <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="rotate(45) scale(39.598)" >
 //                      <stop stopColor="#c92c2c" stopOpacity="0.05" />
 //                      <stop offset="1" stopColor="#9e0e0e" stopOpacity="1" />
 //                    </radialGradient>
