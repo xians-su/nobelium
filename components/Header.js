@@ -32,7 +32,7 @@ const NavBar = () => {
     </div>
   )
 }
-
+ 
 const Header = ({ navBarTitle, fullWidth }) => {
   const useSticky = !BLOG.autoCollapsedNavBar
   const navRef = useRef(null)
