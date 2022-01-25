@@ -17,7 +17,7 @@ const BLOG = {
   showArchive: true,
   autoCollapsedNavBar: false, // The automatically collapsed navigation bar
   ogImageGenerateURL: 'https://og-image-craigary.vercel.app/**%E6%85%A2%E4%B8%89%E6%8B%8D%E5%98%AE%E5%8F%A8**%20by%20Xians.png?theme=light&md=1&fontSize=150px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg', // The link to generate OG image, don't end with a slash https://og-image-craigary.vercel.app
-  //socialLink: 'https://twitter.com/craigaryhart',
+  socialLink: 'https://twitter.com/arcxians',
   seo: {
     keywords: ['慢三拍嘮叨', 'xians', 'Blog', 'Website', 'Notion'],
     googleSiteVerification: '' // Remove the value or replace it with your own google site verification code
