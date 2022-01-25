@@ -69,7 +69,7 @@ const Header = ({ navBarTitle, fullWidth }) => {
           <Link href="/">
             <a aria-label={BLOG.title}>
             
-              <div className="min-w-max">
+              <div>
                  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
               </div>
               
