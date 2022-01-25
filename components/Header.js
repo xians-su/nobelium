@@ -136,12 +136,15 @@ const NavBar = () => {
         <div className="flex items-center">
           <Link href="/">
             <a aria-label={BLOG.title}>
-              <div className='h-6'>
+              <div className="flex">
                 <Image
-                  src='/top.png'
+                  onClick={() => setIconSeed(Date.now())}
                   width={32}
                   height={32}
-                  alt='xians'
+                  src={`/top.png`}
+                  alt="xians"
+                  title="xians"
+                  className="hover:scale-110 active:scale-90 transition-transform duration-300 cursor-pointer"
                 />
               </div>
             </a>
