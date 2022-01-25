@@ -26,7 +26,7 @@ svg + .notion-page-title-text {
 
 .notion-bookmark {
   @apply border;
-  @apply border-gray-100;
+  @apply border-gray-100 dark:border-gray-700;
   color: inherit;
 }
 
@@ -39,11 +39,32 @@ svg + .notion-page-title-text {
   @apply text-gray-600 dark:text-gray-300;
 }
 
+.notion-code {
+  @apply dark:invert dark:hue-rotate-180;
+}
+
+.notion-code {
+  padding: 10px 16px 10px 16px !important;
+  line-height: 1.5rem !important;
+}
+
+.dark .notion-code {
+  background-color: rgb(220, 220, 220);
+}
+
+.token.operator {
+  background-color: transparent;
+}
+
+.dark .token.operator {
+  background-color: rgb(220, 220, 220);
+}
+
 .notion-code > code {
   @apply text-gray-900;
 }
 
-pre[class*='language-'] {
+pre[class*="language-"] {
   line-height: inherit;
 }
 
@@ -65,7 +86,9 @@ pre[class*='language-'] {
   @apply px-0;
 }
 .notion-quote {
+  @apply dark:border-gray-600;
   padding: 0.2em 0.9em;
+  font-size: 1em;
 }
 .notion-collection {
   @apply max-w-full;
@@ -84,4 +107,24 @@ pre[class*='language-'] {
 }
 .notion-collection-row {
   @apply hidden;
+}
+
+.notion-table-header {
+  @apply dark:text-gray-200;
+}
+
+.notion-property-title {
+  @apply pointer-events-none;
+}
+
+.dark .notion-collection-column-title-icon {
+  fill: rgb(209, 213, 219);
+}
+
+.dark .notion-table {
+  --fg-color-1: rgb(60, 60, 60);
+}
+
+.notion-header-anchor {
+  top: -70px;
 }
