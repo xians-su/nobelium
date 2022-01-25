@@ -112,24 +112,6 @@ const NavBar = () => {
     </div>
   );
 };
-
-const Header = ({ navBarTitle, fullWidth }) => {
-  const [iconSeed, setIconSeed] = useState(Date.now());
-  const { setLayout } = useLayout();
-  const useSticky = !BLOG.autoCollapsedNavBar;
-  const navRef = useRef(null);
-  const sentinalRef = useRef([]);
-  const handler = ([entry]) => {
-    if (navRef && navRef.current && useSticky) {
-      if (!entry.isIntersecting && entry !== undefined) {
-        navRef.current?.classList.add("sticky-nav-full");
-      } else {
-        navRef.current?.classList.remove("sticky-nav-full");
-      }
-    } else {
-      navRef.current?.classList.add("remove-sticky");
-    }
-  };
   useEffect(() => {
     setLayout({ scrollTopRef: sentinalRef });
     const obvserver = new window.IntersectionObserver(handler);
