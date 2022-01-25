@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import BLOG from '@/blog.config'
 import { useLocale } from '@/lib/locale'
 const NavBar = () => {
@@ -74,7 +75,7 @@ const Header = ({ navBarTitle, fullWidth }) => {
                   src='/top.png'
                   width={24}
                   height={24}
-                  alt='daisukesone'
+                  alt='xians'
                 />
               </div>
             </a>
