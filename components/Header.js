@@ -2,7 +2,6 @@ import { useEffect, useRef } from 'react'
 import Link from 'next/link'
 import BLOG from '@/blog.config'
 import { useLocale } from '@/lib/locale'
-
 const NavBar = () => {
   const locale = useLocale()
   const links = [
@@ -27,12 +26,11 @@ const NavBar = () => {
                 </Link>
               </li>
             )
-        )} 
+        )}
       </ul>
     </div>
   )
 }
- 
 const Header = ({ navBarTitle, fullWidth }) => {
   const useSticky = !BLOG.autoCollapsedNavBar
   const navRef = useRef(null)
@@ -119,5 +117,4 @@ const Header = ({ navBarTitle, fullWidth }) => {
     </>
   )
 }
-
 export default Header
