@@ -1,21 +1,20 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
 import BLOG from "@/blog.config";
 import { useLocale } from "@/lib/locale";
 import { useTheme } from "@/lib/theme";
-import { useLayout } from "@/lib/layout";
 
 const NavBar = () => {
   const locale = useLocale();
   const { theme, setTheme } = useTheme();
 
   const links = [
-    { id: 0, name: locale.NAV.INDEX, to: BLOG.path || '/', show: true },
-    { id: 1, name: locale.NAV.ABOUT, to: '/about', show: BLOG.showAbout },
-    { id: 2, name: locale.NAV.RSS, to: '/feed', show: true },
-    { id: 3, name: locale.NAV.SEARCH, to: '/search', show: true }
+    { id: 0, name: locale.NAV.INDEX, to: BLOG.path || "/", show: true },
+    { id: 1, name: locale.NAV.ABOUT, to: "/about", show: BLOG.showAbout },
+    { id: 2, name: locale.NAV.RSS, to: "/feed", show: true },
+    { id: 3, name: locale.NAV.SEARCH, to: "/search", show: true },
   ];
 
   useEffect(() => {
@@ -112,8 +111,23 @@ const NavBar = () => {
     </div>
   );
 };
+
+const Header = ({ navBarTitle, fullWidth }) => {
+  const useSticky = !BLOG.autoCollapsedNavBar;
+  const navRef = useRef(null);
+  const sentinalRef = useRef([]);
+  const handler = ([entry]) => {
+    if (navRef && navRef.current && useSticky) {
+      if (!entry.isIntersecting && entry !== undefined) {
+        navRef.current?.classList.add("sticky-nav-full");
+      } else {
+        navRef.current?.classList.remove("sticky-nav-full");
+      }
+    } else {
+      navRef.current?.classList.add("remove-sticky");
+    }
+  };
   useEffect(() => {
-    setLayout({ scrollTopRef: sentinalRef });
     const obvserver = new window.IntersectionObserver(handler);
     obvserver.observe(sentinalRef.current);
     // Don't touch this, I have no idea how it works XD
@@ -136,15 +150,12 @@ const NavBar = () => {
         <div className="flex items-center">
           <Link href="/">
             <a aria-label={BLOG.title}>
-              <div className="flex">
+              <div className='h-6'>
                 <Image
-                  onClick={() => setIconSeed(Date.now())}
+                  src='/top.png'
                   width={32}
                   height={32}
-                  src={`/top.png`}
-                  alt="xians"
-                  title="xians"
-                  className="hover:scale-110 active:scale-90 transition-transform duration-300 cursor-pointer"
+                  alt='xians'
                 />
               </div>
             </a>
