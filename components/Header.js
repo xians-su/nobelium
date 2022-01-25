@@ -161,6 +161,5 @@ const NavBar = () => {
       </div>
     </>
   );
-};
 
 export default Header;
