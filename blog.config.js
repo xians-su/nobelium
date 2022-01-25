@@ -1,9 +1,9 @@
 const BLOG = {
-  title: 'Xians Blog',
+  title: '慢三拍嘮叨 by Xians',
   author: 'Xians Su',
   email: 'hi@xians.su',
   link: 'https://blog.xians.su',
-  description: '慢三拍嘮叨.',
+  description: '😨資訊恐慌症 × 松鼠症患者🐿，不時嘮叨，但提醒自己言之有物',
   lang: 'en-US', // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES']
   appearance: 'auto', // ['light', 'dark', 'auto'],
   font: 'sans-serif', // ['sans-serif', 'serif']
