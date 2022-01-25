@@ -12,14 +12,14 @@ const NavBar = () => {
     { id: 4, name: locale.NAV.SEARCH, to: '/search', show: true }
   ]
   return (
-    <div className="flex-shrink-0">
-      <ul className="flex flex-row">
+    <div className='flex-shrink-0'>
+      <ul className='flex flex-row'>
         {links.map(
-          link =>
+          (link) =>
             link.show && (
               <li
                 key={link.id}
-                className="block ml-4 text-black dark:text-gray-50 nav"
+                className='block ml-4 text-black dark:text-gray-50 nav'
               >
                 <Link href={link.to}>
                   <a>{link.name}</a>
@@ -31,6 +31,7 @@ const NavBar = () => {
     </div>
   )
 }
+
 const Header = ({ navBarTitle, fullWidth }) => {
   const useSticky = !BLOG.autoCollapsedNavBar
   const navRef = useRef(null)
@@ -57,23 +58,23 @@ const Header = ({ navBarTitle, fullWidth }) => {
   }, [sentinalRef])
   return (
     <>
-      <div className="observer-element h-4 md:h-12" ref={sentinalRef}></div>
+      <div className='observer-element h-4 md:h-12' ref={sentinalRef}></div>
       <div
         className={`sticky-nav m-auto w-full h-6 flex flex-row justify-between items-center mb-2 md:mb-12 py-8 bg-opacity-60 ${
           !fullWidth ? 'max-w-3xl px-4' : 'px-4 md:px-24'
         }`}
-        id="sticky-nav"
+        id='sticky-nav'
         ref={navRef}
       >
-        <div className="flex items-center">
-          <Link href="/">
+        <div className='flex items-center'>
+          <Link href='/'>
             <a aria-label={BLOG.title}>
               <div className='h-6'>
                 <Image
                   src='/top.png'
                   width={24}
                   height={24}
-                  alt='xians'
+                  alt='daisukesone'
                 />
               </div>
             </a>
@@ -96,4 +97,5 @@ const Header = ({ navBarTitle, fullWidth }) => {
     </>
   )
 }
+
 export default Header
