@@ -20,7 +20,11 @@ module.exports = {
   },
   rules: {
     "react/prop-types": "off",
+    "comma-dangle": "off",
+    semi: "off",
     quotes: "off",
+    "multiline-ternary": "off",
+    "space-before-function-paren": "off",
   },
   globals: {
     React: true,
