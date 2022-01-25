@@ -8,7 +8,7 @@ const NavBar = () => {
   const links = [
     { id: 0, name: locale.NAV.INDEX, to: BLOG.path || '/', show: true },
     { id: 1, name: locale.NAV.ABOUT, to: 'https://xians.su', show: BLOG.showAbout },
-    { id: 2, name: locale.NAV.FRIENDS, to: '/links', show: true },
+    { id: 2, name: locale.NAV.LINKS, to: '/links', show: true },
     { id: 3, name: locale.NAV.RSS, to: '/feed', show: true },
     { id: 4, name: locale.NAV.SEARCH, to: '/search', show: true }
   ]
@@ -94,7 +94,7 @@ const Header = ({ navBarTitle, fullWidth }) => {
                       gradientTransform="rotate(45) scale(39.598)"
                     >
                       <stop stopColor="#c92c2c" stopOpacity="0.05" />
-                      <stop offset="1" stopColor="#870303" stopOpacity="1" />
+                      <stop offset="1" stopColor="#9e0e0e" stopOpacity="1" />
                     </radialGradient>
                   </defs>
                 </svg>
