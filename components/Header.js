@@ -54,7 +54,32 @@ const NavBar = () => {
     }
   };
 
-    return (
+const Header = ({ navBarTitle, fullWidth }) => {
+  const useSticky = !BLOG.autoCollapsedNavBar;
+  const navRef = useRef(null);
+  const sentinalRef = useRef([]);
+  const handler = ([entry]) => {
+    if (navRef && navRef.current && useSticky) {
+      if (!entry.isIntersecting && entry !== undefined) {
+        navRef.current?.classList.add("sticky-nav-full");
+      } else {
+        navRef.current?.classList.remove("sticky-nav-full");
+      }
+    } else {
+      navRef.current?.classList.add("remove-sticky");
+    }
+  };
+  useEffect(() => {
+    const obvserver = new window.IntersectionObserver(handler);
+    obvserver.observe(sentinalRef.current);
+    // Don't touch this, I have no idea how it works XD
+    // return () => {
+    //   if (sentinalRef.current) obvserver.unobserve(sentinalRef.current)
+    // }
+    /* eslint-disable-line */
+  }, [sentinalRef]);
+
+  return (
     <>
       <div className="observer-element md:h-12" ref={sentinalRef}></div>
       <div
@@ -92,7 +117,8 @@ const NavBar = () => {
       </div>
     </>
   );
-  
+};
+
   return (
     <div className="flex items-center flex-shrink-0">
       <Head>
@@ -152,30 +178,5 @@ const NavBar = () => {
   );
 };
 
-const Header = ({ navBarTitle, fullWidth }) => {
-  const useSticky = !BLOG.autoCollapsedNavBar;
-  const navRef = useRef(null);
-  const sentinalRef = useRef([]);
-  const handler = ([entry]) => {
-    if (navRef && navRef.current && useSticky) {
-      if (!entry.isIntersecting && entry !== undefined) {
-        navRef.current?.classList.add("sticky-nav-full");
-      } else {
-        navRef.current?.classList.remove("sticky-nav-full");
-      }
-    } else {
-      navRef.current?.classList.add("remove-sticky");
-    }
-  };
-  useEffect(() => {
-    const obvserver = new window.IntersectionObserver(handler);
-    obvserver.observe(sentinalRef.current);
-    // Don't touch this, I have no idea how it works XD
-    // return () => {
-    //   if (sentinalRef.current) obvserver.unobserve(sentinalRef.current)
-    // }
-    /* eslint-disable-line */
-  }, [sentinalRef]);
-};
 
 export default Header;
