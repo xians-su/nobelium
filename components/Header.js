@@ -1,173 +1,116 @@
-import { useEffect, useRef } from "react";
-import Link from "next/link";
-import Head from "next/head";
-import Image from "next/image";
-import BLOG from "@/blog.config";
-import { useLocale } from "@/lib/locale";
-import { useTheme } from "@/lib/theme";
+import classNames from 'classnames';
+import { useTheme } from 'next-themes';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { useCallback, useEffect, useMemo, useRef } from 'react';
+import { SunIcon } from '@heroicons/react/solid';
+import { MoonIcon } from '@heroicons/react/solid';
+import BLOG from '~/blog.config';
+import { fetchLocaleLang } from '~/lib/i18n/lang';
+import { Twemoji } from './Twemoji';
 
-const NavBar = () => {
-  const locale = useLocale();
+const locale = fetchLocaleLang();
+const links = [
+  { id: 0, name: locale.NAV.INDEX, to: BLOG.path || '/', show: true },
+  { id: 1, name: locale.NAV.ABOUT, to: '/about', show: BLOG.showAbout },
+  { id: 2, name: locale.NAV.RSS, to: '/feed', show: true },
+];
+
+const NavBar: React.VFC = () => {
+  const router = useRouter();
   const { theme, setTheme } = useTheme();
-
-  const links = [
-    { id: 0, name: locale.NAV.INDEX, to: BLOG.path || "/", show: true },
-    { id: 1, name: locale.NAV.ABOUT, to: "/about", show: BLOG.showAbout },
-    { id: 2, name: locale.NAV.RSS, to: "/feed", show: true },
-    { id: 3, name: locale.NAV.SEARCH, to: "/search", show: true },
-  ];
-
-  useEffect(() => {
-    if (
-      localStorage.theme === "dark" ||
-      (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
-    ) {
-      document.documentElement.classList.add("dark");
-      setTheme("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      setTheme("light");
-    }
-  }, [theme]);
-
-  useEffect(() => {
-    const handleThemeChange = (e) => {
-      toggleTheme(e.matches ? "light" : "dark");
-    };
-    window
-      .matchMedia("(prefers-color-scheme: dark)")
-      .addEventListener("change", handleThemeChange);
-    return window.removeEventListener("change", handleThemeChange);
-  }, []);
-
-  const toggleTheme = (theme) => {
-    if (theme === "dark") {
-      document.documentElement.classList.remove("dark");
-      setTheme("light");
-      localStorage.theme = "light";
-    } else {
-      document.documentElement.classList.add("dark");
-      setTheme("dark");
-      localStorage.theme = "dark";
-    }
-  };
+  const activeNav = useMemo(() => {
+    if (router.asPath === links[1].to) return links[1].to;
+    if (router.pathname === links[0].to || router.asPath.includes('tag')) return links[0].to;
+    return null;
+  }, [router]);
 
   return (
-    <div className="flex items-center flex-shrink-0">
-      <Head>
-        <meta
-          name="theme-color"
-          content={
-            theme === "dark" ? BLOG.darkBackground : BLOG.lightBackground
-          }
-        />
-      </Head>
-      <button
-        aria-label="Toggle Dark Mode"
-        type="button"
-        className="w-8 h-8 p-1 ml-1 mr-1 rounded sm:ml-4 hover:scale-110 active:scale-90 transition-transform duration-200"
-        onClick={() => toggleTheme(theme)}
-      >
-        {theme === "light" ? (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            className="text-gray-900 dark:text-gray-100"
-          >
-            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-          </svg>
-        ) : (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            className="text-gray-900 dark:text-gray-100"
-          >
-            <path
-              d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-              fillRule="evenodd"
-              clipRule="evenodd"
-            ></path>
-          </svg>
-        )}
-      </button>
-      <ul className="flex flex-row">
+    <div className="flex-shrink-0">
+      <ul className="flex flex-row items-center">
         {links.map(
           (link) =>
             link.show && (
               <li
                 key={link.id}
-                className="flex items-center ml-4 text-black dark:text-gray-50 nav"
+                className={classNames('block ml-4 text-black dark:text-gray-50 nav', {
+                  'border-b-2 border-blue-700 dark:border-blue-400': link.to === activeNav,
+                })}
               >
                 <Link href={link.to}>
                   <a>{link.name}</a>
                 </Link>
               </li>
-            )
+            ),
         )}
+        <li className="ml-4">
+          <button
+            className="block p-1 bg-night dark:bg-day rounded-full transition-all duration-300"
+            onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+            aria-label="toggle Dark Mode"
+          >
+            {theme === 'light' ? <MoonIcon className="w-5 h-5 text-day" /> : <SunIcon className="w-5 h-5 text-night" />}
+          </button>
+        </li>
       </ul>
     </div>
   );
 };
 
-const Header = ({ navBarTitle, fullWidth }) => {
-  const useSticky = !BLOG.autoCollapsedNavBar;
-  const navRef = useRef(null);
-  const sentinalRef = useRef([]);
-  const handler = ([entry]) => {
-    if (navRef && navRef.current && useSticky) {
+type HeaderProps = {
+  navBarTitle: string | null;
+  fullWidth?: boolean;
+};
+
+export const Header: React.VFC<HeaderProps> = ({ navBarTitle, fullWidth }) => {
+  const navRef = useRef<HTMLDivElement>(null);
+  const sentinalRef = useRef<HTMLDivElement>(null);
+  const handler = useCallback(([entry]: IntersectionObserverEntry[]) => {
+    if (navRef && navRef.current && !BLOG.autoCollapsedNavBar) {
       if (!entry.isIntersecting && entry !== undefined) {
-        navRef.current?.classList.add("sticky-nav-full");
+        navRef.current.classList.add('sticky-nav-full');
       } else {
-        navRef.current?.classList.remove("sticky-nav-full");
+        navRef.current.classList.remove('sticky-nav-full');
       }
     } else {
-      navRef.current?.classList.add("remove-sticky");
+      navRef?.current?.classList.add('remove-sticky');
     }
-  };
+  }, []);
   useEffect(() => {
     const obvserver = new window.IntersectionObserver(handler);
-    obvserver.observe(sentinalRef.current);
+    if (sentinalRef?.current) obvserver.observe(sentinalRef.current);
     // Don't touch this, I have no idea how it works XD
     // return () => {
-    //   if (sentinalRef.current) obvserver.unobserve(sentinalRef.current)
-    // }
-    /* eslint-disable-line */
-  }, [sentinalRef]);
-
+    //   if (sentinalRef.current) obvserver.unobserve(sentinalRef.current);
+    // };
+  }, [sentinalRef, handler]);
   return (
     <>
-      <div className="observer-element md:h-12" ref={sentinalRef}></div>
+      <div className="h-4 md:h-12" ref={sentinalRef}></div>
       <div
-        className={`sticky-nav m-auto w-full h-6 flex flex-row justify-between items-center mb-6 md:mb-12 py-8 bg-opacity-60 ${
-          !fullWidth ? "max-w-3xl px-4" : "px-4 md:px-24"
-        }`}
+        className={classNames(
+          'sticky-nav m-auto w-full h-6 flex flex-row justify-between items-center mb-2 md:mb-12 py-8 bg-opacity-60',
+          {
+            'px-4 md:px-24': fullWidth,
+            'max-w-2xl px-4': !fullWidth,
+          },
+        )}
         id="sticky-nav"
         ref={navRef}
       >
         <div className="flex items-center">
           <Link href="/">
             <a aria-label={BLOG.title}>
-              <div className='h-6'>
-                <Image
-                  src='/top.png'
-                  width={24}
-                  height={24}
-                  alt='xians'
-                />
+              <div className="min-w-max">
+                <Twemoji emoji={'🛸'} size={28} />
               </div>
             </a>
           </Link>
           {navBarTitle ? (
-            <p className="ml-4 font-medium text-day dark:text-night header-name">
-              {navBarTitle}
-            </p>
+            <p className="ml-2 font-medium text-day dark:text-night header-name">{navBarTitle}</p>
           ) : (
-            <p className="ml-4 font-medium text-day dark:text-night header-name">
-              {BLOG.title},{" "}
-              <span className="font-normal">{BLOG.description}</span>
+            <p className="ml-2 font-medium text-day dark:text-night header-name">
+              {BLOG.title} -<span className="font-normal">{BLOG.description}</span>
             </p>
           )}
         </div>
@@ -176,5 +119,3 @@ const Header = ({ navBarTitle, fullWidth }) => {
     </>
   );
 };
-
-export default Header;
