@@ -64,6 +64,22 @@ const NavBar = () => {
           }
         />
       </Head>
+      <ul className="flex flex-row">
+        {links.map(
+          (link) =>
+            link.show && (
+              <li
+                key={link.id}
+                className="flex items-center ml-4 text-black dark:text-gray-50 nav"
+              >
+                <Link href={link.to}>
+                  <a>{link.name}</a>
+                </Link>
+              </li>
+            )
+        )}
+      </ul>
+
       <button
         aria-label="Toggle Dark Mode"
         type="button"
@@ -94,21 +110,6 @@ const NavBar = () => {
           </svg>
         )}
       </button>
-      <ul className="flex flex-row">
-        {links.map(
-          (link) =>
-            link.show && (
-              <li
-                key={link.id}
-                className="flex items-center ml-4 text-black dark:text-gray-50 nav"
-              >
-                <Link href={link.to}>
-                  <a>{link.name}</a>
-                </Link>
-              </li>
-            )
-        )}
-      </ul>
     </div>
   );
 };
