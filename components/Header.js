@@ -54,6 +54,45 @@ const NavBar = () => {
     }
   };
 
+    return (
+    <>
+      <div className="observer-element md:h-12" ref={sentinalRef}></div>
+      <div
+        className={`sticky-nav m-auto w-full h-6 flex flex-row justify-between items-center mb-6 md:mb-12 py-8 bg-opacity-60 ${
+          !fullWidth ? "max-w-3xl px-4" : "px-4 md:px-24"
+        }`}
+        id="sticky-nav"
+        ref={navRef}
+      >
+        <div className="flex items-center">
+          <Link href="/">
+            <a aria-label={BLOG.title}>
+              <div className='h-6'>
+                <Image
+                  src='/top.png'
+                  width={24}
+                  height={24}
+                  alt='xians'
+                />
+              </div>
+            </a>
+          </Link>
+          {navBarTitle ? (
+            <p className="ml-4 font-medium text-day dark:text-night header-name">
+              {navBarTitle}
+            </p>
+          ) : (
+            <p className="ml-4 font-medium text-day dark:text-night header-name">
+              {BLOG.title},{" "}
+              <span className="font-normal">{BLOG.description}</span>
+            </p>
+          )}
+        </div>
+        <NavBar />
+      </div>
+    </>
+  );
+  
   return (
     <div className="flex items-center flex-shrink-0">
       <Head>
@@ -137,45 +176,6 @@ const Header = ({ navBarTitle, fullWidth }) => {
     // }
     /* eslint-disable-line */
   }, [sentinalRef]);
-
-  return (
-    <>
-      <div className="observer-element md:h-12" ref={sentinalRef}></div>
-      <div
-        className={`sticky-nav m-auto w-full h-6 flex flex-row justify-between items-center mb-6 md:mb-12 py-8 bg-opacity-60 ${
-          !fullWidth ? "max-w-3xl px-4" : "px-4 md:px-24"
-        }`}
-        id="sticky-nav"
-        ref={navRef}
-      >
-        <div className="flex items-center">
-          <Link href="/">
-            <a aria-label={BLOG.title}>
-              <div className='h-6'>
-                <Image
-                  src='/top.png'
-                  width={24}
-                  height={24}
-                  alt='xians'
-                />
-              </div>
-            </a>
-          </Link>
-          {navBarTitle ? (
-            <p className="ml-4 font-medium text-day dark:text-night header-name">
-              {navBarTitle}
-            </p>
-          ) : (
-            <p className="ml-4 font-medium text-day dark:text-night header-name">
-              {BLOG.title},{" "}
-              <span className="font-normal">{BLOG.description}</span>
-            </p>
-          )}
-        </div>
-        <NavBar />
-      </div>
-    </>
-  );
 };
 
 export default Header;
