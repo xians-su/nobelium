@@ -155,8 +155,8 @@ const Header = ({ navBarTitle, fullWidth }) => {
               <div className='h-6'>
                 <Image
                   src='/top.png'
-                  width={32}
-                  height={32}
+                  width={26}
+                  height={26}
                   alt='xians'
                 />
               </div>
