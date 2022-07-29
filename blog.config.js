@@ -2,7 +2,7 @@ const BLOG = {
   title: 'Xians | 慢三拍嘮叨',
   author: 'Xians Su',
   email: 'hi@xians.su',
-  link: 'https://xians.su/blog',
+  link: 'https://blog.xians.su',
   description: '😨資訊恐慌症 × 松鼠症患者🐿，不時嘮叨，但提醒自己言之有物',
   lang: 'en-US', // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES']
   appearance: 'dark', // ['light', 'dark', 'auto'],
