@@ -2,14 +2,14 @@ const BLOG = {
   title: 'Xians | 慢三拍嘮叨',
   author: 'Xians Su',
   email: 'hi@xians.su',
-  link: 'https://blog.xians.su',
+  link: 'https://xians.su/blog',
   description: '😨資訊恐慌症 × 松鼠症患者🐿，不時嘮叨，但提醒自己言之有物',
   lang: 'en-US', // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES']
   appearance: 'dark', // ['light', 'dark', 'auto'],
   font: 'sans-serif', // ['sans-serif', 'serif']
   lightBackground: '#ffffff', // use hex value, don't forget '#' e.g #fffefc
   darkBackground: '#18181B', // use hex value, don't forget '#'
-  path: 'blog', // leave this empty unless you want to deploy Nobelium in a folder
+  path: '', // leave this empty unless you want to deploy Nobelium in a folder
   since: 2022, // If leave this empty, current year will be used.
   postsPerPage: 7,
   sortByDate: true,
