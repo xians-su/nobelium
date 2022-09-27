@@ -16,7 +16,7 @@ const BLOG = {
   showAbout: true,
   showArchive: true,
   autoCollapsedNavBar: false, // The automatically collapsed navigation bar
-  ogImageGenerateURL: 'https://github.com/xians-su/nobelium-notion-blog/blob/main/public/webcover.png',
+  ogImageGenerateURL: 'https://raw.githubusercontent.com/xians-su/nobelium-notion-blog/main/public/webcover.png',
   //socialLink: 'https://twitter.com/arcxians',
   seo: {
     keywords: ['慢三拍嘮叨', 'xians', 'Blog', 'Website', 'Notion'],
