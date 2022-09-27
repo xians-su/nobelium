@@ -16,7 +16,7 @@ const BLOG = {
   showAbout: true,
   showArchive: true,
   autoCollapsedNavBar: false, // The automatically collapsed navigation bar
-  ogImageGenerateURL: 'https://previews.dropbox.com/p/thumb/ABquPDME5Ixbw53WI7HNnVD8-rVnjtwHSy8A2yBXwbITRwjSvjukyk6Sfg8vhNHThy8h1_rm8MCTTDQ0OsXxQC5gRi5HQ5_rO5aFF2eqnsBlORG4zG1cmShtXlLXbWMWvJSg1kcPqT2OjOljAOpKMIfZZ54x_NLQ7QKhajZqBUYPeLubTecr-oqP3HdGvd9B2LFUNJryjy6d1mCmxg_IPdcBhVF5pOfVxCjzjDJ_KwWfgnCEedCoZE6p6Fik1f_Ec0l-4p7FWhJJb5j1owZqSKSBVw_EReC7s8v5Rt789No9dyVRWvv5Bi0xGhQPtyMH1duk45Odein-30WUV2e25ioXgwjwsW9KfcYF5HE8AbhNGAzeQEX3xmLdd6AUQyPX0I0/p.png',
+  ogImageGenerateURL: 'https://uc72a481e9d818ed976f41026c29.previews.dropboxusercontent.com/p/thumb/ABoSWSnBJGdJmx471fcxEqEb2DUk1CYrUXRuKxt3QuoRIFFYQyxgnVrE6YzdVkeqI3qncS48XOOFIzHhO3UExFNRLCtJ-0mgdIgA0e9bXYlXp_4pWeVwywmPt53FkdlAKpmntCii9lFVJf6nJSVgZXem6NLigUtnNhZAl0MwEvTPWH3ULl0kBiadJl6iyk5au7fmYbdDStHTcWCuYDsGgNeksFKkExWdShqmfJcrU1Eg8djYsx4Kd5_xHr6kYuNVz7gPgXNmOEF2c6hkRGDqj3-cnG6zORBrWULYnISCPLESmhBVCT_r4W9mQIP_o0H_pk15FHV_99CFMwSPg2ZMBUkmG_4Yg6_FyYRNM2kyjULe_FX_QNGp3Ktg_12IE7sxX1lAu50VcKZZHZSE71NhPY8W_YxD_G5B0sNSy789V02p2w/p.png',
   //socialLink: 'https://twitter.com/arcxians',
   seo: {
     keywords: ['慢三拍嘮叨', 'xians', 'Blog', 'Website', 'Notion'],
