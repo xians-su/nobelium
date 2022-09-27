@@ -16,7 +16,7 @@ const BLOG = {
   showAbout: true,
   showArchive: true,
   autoCollapsedNavBar: false, // The automatically collapsed navigation bar
-  ogImageGenerateURL: 'https://uc72a481e9d818ed976f41026c29.previews.dropboxusercontent.com/p/thumb/ABoSWSnBJGdJmx471fcxEqEb2DUk1CYrUXRuKxt3QuoRIFFYQyxgnVrE6YzdVkeqI3qncS48XOOFIzHhO3UExFNRLCtJ-0mgdIgA0e9bXYlXp_4pWeVwywmPt53FkdlAKpmntCii9lFVJf6nJSVgZXem6NLigUtnNhZAl0MwEvTPWH3ULl0kBiadJl6iyk5au7fmYbdDStHTcWCuYDsGgNeksFKkExWdShqmfJcrU1Eg8djYsx4Kd5_xHr6kYuNVz7gPgXNmOEF2c6hkRGDqj3-cnG6zORBrWULYnISCPLESmhBVCT_r4W9mQIP_o0H_pk15FHV_99CFMwSPg2ZMBUkmG_4Yg6_FyYRNM2kyjULe_FX_QNGp3Ktg_12IE7sxX1lAu50VcKZZHZSE71NhPY8W_YxD_G5B0sNSy789V02p2w/p.png',
+  ogImageGenerateURL: 'https://raw.githubusercontent.com/xians-su/nobelium-notion-blog/main/public/webcover.png',
   //socialLink: 'https://twitter.com/arcxians',
   seo: {
     keywords: ['慢三拍嘮叨', 'xians', 'Blog', 'Website', 'Notion'],
