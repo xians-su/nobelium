@@ -16,7 +16,7 @@ const BLOG = {
   showAbout: true,
   showArchive: true,
   autoCollapsedNavBar: false, // The automatically collapsed navigation bar
-  ogImageGenerateURL: 'https://raw.githubusercontent.com/xians-su/nobelium-notion-blog/main/public/webcover.png',
+  ogImageGenerateURL: 'https://og-image-craigary.vercel.app/**%E6%85%A2%E4%B8%89%E6%8B%8D%E5%98%AE%E5%8F%A8**%20by%20Xians.png?theme=light&md=1&fontSize=150px&images=https%3A%2F%2Fnobelium.vercel.app%2Flogo-for-light-bg.svg&images=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fremojansen%2Flogo.ts%40master%2Fts.svg&heights=auto',
   //socialLink: 'https://twitter.com/arcxians',
   seo: {
     keywords: ['慢三拍嘮叨', 'xians', 'Blog', 'Website', 'Notion'],
