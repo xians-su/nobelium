@@ -16,7 +16,7 @@ const BLOG = {
   showAbout: true,
   showArchive: true,
   autoCollapsedNavBar: false, // The automatically collapsed navigation bar
-  ogImageGenerateURL: 'https://og-image-craigary.vercel.app/**%E6%85%A2%E4%B8%89%E6%8B%8D%E5%98%AE%E5%8F%A8**%20by%20Xians.png?theme=light&md=1&fontSize=150px&images=https%3A%2F%2Fnobelium.vercel.app%2Flogo-for-light-bg.svg&images=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fremojansen%2Flogo.ts%40master%2Fts.svg&heights=auto',
+  ogImageGenerateURL: 'https://previews.dropbox.com/p/thumb/ABquPDME5Ixbw53WI7HNnVD8-rVnjtwHSy8A2yBXwbITRwjSvjukyk6Sfg8vhNHThy8h1_rm8MCTTDQ0OsXxQC5gRi5HQ5_rO5aFF2eqnsBlORG4zG1cmShtXlLXbWMWvJSg1kcPqT2OjOljAOpKMIfZZ54x_NLQ7QKhajZqBUYPeLubTecr-oqP3HdGvd9B2LFUNJryjy6d1mCmxg_IPdcBhVF5pOfVxCjzjDJ_KwWfgnCEedCoZE6p6Fik1f_Ec0l-4p7FWhJJb5j1owZqSKSBVw_EReC7s8v5Rt789No9dyVRWvv5Bi0xGhQPtyMH1duk45Odein-30WUV2e25ioXgwjwsW9KfcYF5HE8AbhNGAzeQEX3xmLdd6AUQyPX0I0/p.png',
   //socialLink: 'https://twitter.com/arcxians',
   seo: {
     keywords: ['慢三拍嘮叨', 'xians', 'Blog', 'Website', 'Notion'],
