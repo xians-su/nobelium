@@ -40,7 +40,8 @@ const Container = ({ children, layout, fullWidth, ...customMeta }) => {
           property="og:image"
           content={`${BLOG.ogImageGenerateURL}/${encodeURIComponent(
             meta.title
-          )}.png?theme=dark&md=1&fontSize=125px&images=https%3A%2F%2Fnobelium.vercel.app%2Flogo-for-dark-bg.svg`}
+//          )}.png?theme=dark&md=1&fontSize=125px&images=https%3A%2F%2Fnobelium.vercel.app%2Flogo-for-dark-bg.svg`}
+            )}.png`}
         />
         <meta property="og:type" content={meta.type} />
         <meta name="twitter:card" content="summary_large_image" />
@@ -50,7 +51,7 @@ const Container = ({ children, layout, fullWidth, ...customMeta }) => {
           name="twitter:image"
           content={`${BLOG.ogImageGenerateURL}/${encodeURIComponent(
             meta.title
-          )}.png?theme=dark&md=1&fontSize=125px&images=https%3A%2F%2Fnobelium.vercel.app%2Flogo-for-dark-bg.svg`}
+          )}.png`}
         />
         {meta.type === "article" && (
           <>
@@ -70,6 +71,9 @@ const Container = ({ children, layout, fullWidth, ...customMeta }) => {
         <Header
           navBarTitle={layout === "blog" ? meta.title : null}
           fullWidth={fullWidth}
+          ${
+            !fullWidth ? "max-w-2xl px-4" : "px-4 md:px-24"
+          }
         />
         <main
           className={`relative m-auto flex-grow w-full transition-all ${
