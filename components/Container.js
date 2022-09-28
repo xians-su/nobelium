@@ -41,7 +41,7 @@ const Container = ({ children, layout, fullWidth, ...customMeta }) => {
           content={`${BLOG.ogImageGenerateURL}/${encodeURIComponent(
             meta.title
 //          )}.png?theme=dark&md=1&fontSize=125px&images=https%3A%2F%2Fnobelium.vercel.app%2Flogo-for-dark-bg.svg`}
-            )}.png`}
+            )}`}
         />
         <meta property="og:type" content={meta.type} />
         <meta name="twitter:card" content="summary_large_image" />
@@ -51,7 +51,8 @@ const Container = ({ children, layout, fullWidth, ...customMeta }) => {
           name="twitter:image"
           content={`${BLOG.ogImageGenerateURL}/${encodeURIComponent(
             meta.title
-          )}.png`}
+//        )}.png?theme=dark&md=1&fontSize=125px&images=https%3A%2F%2Fnobelium.vercel.app%2Flogo-for-dark-bg.svg`}
+          )}`}
         />
         {meta.type === "article" && (
           <>
