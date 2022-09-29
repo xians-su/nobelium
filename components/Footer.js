@@ -19,7 +19,7 @@ const Footer = ({ fullWidth }) => {
 					<p>
 						{BLOG.author} © {from === y || !from ? y : `${from} - ${y}`}
 					</p>{' '}
-					<a href="https://vercel.com?utm_source=Craigary&utm_campaign=oss">
+					<a href="https://vercel.com">
 						Powered by
 						<svg
 							width="21"
