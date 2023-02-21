@@ -1,5 +1,5 @@
 const BLOG = {
-  title: 'Xians | 慢三拍嘮叨',
+  title: 'Xians | 慢叨',
   author: 'Xians Su',
   email: 'hi@xians.su',
   link: 'https://blog.xians.su',
@@ -19,7 +19,7 @@ const BLOG = {
   ogImageGenerateURL: 'https://raw.githubusercontent.com/xians-su/nobelium-notion-blog/main/public/webcover.png',
   //socialLink: 'https://twitter.com/arcxians',
   seo: {
-    keywords: ['慢三拍嘮叨', 'xians', 'Blog', 'Website', 'Notion'],
+    keywords: ['慢叨', 'xians', 'Blog', 'Website', 'Notion'],
     googleSiteVerification: '' // Remove the value or replace it with your own google site verification code
   },
   notionPageId: process.env.NOTION_PAGE_ID, // DO NOT CHANGE THIS！！！
