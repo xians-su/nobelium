@@ -17,9 +17,9 @@ const BLOG = {
   showArchive: true,
   autoCollapsedNavBar: false, // The automatically collapsed navigation bar
   ogImageGenerateURL: 'https://raw.githubusercontent.com/xians-su/nobelium-notion-blog/main/public/webcover.png',
-  //socialLink: 'https://twitter.com/arcxians',
+  socialLink: 'https://hi.xians.su',
   seo: {
-    keywords: ['慢叨', 'xians', 'Blog', 'Website', 'Notion'],
+    keywords: ['xians', 'Xians Su', '慢叨'],
     googleSiteVerification: '' // Remove the value or replace it with your own google site verification code
   },
   notionPageId: process.env.NOTION_PAGE_ID, // DO NOT CHANGE THIS！！！
