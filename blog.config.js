@@ -47,7 +47,7 @@ const BLOG = {
       distractionFreeMode: false
     },
     utterancesConfig: {
-      repo: ''
+      repo: 'xians-su/nobelium-notion-blog'
     },
     cusdisConfig: {
       appId: '', // data-app-id
