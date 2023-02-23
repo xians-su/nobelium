@@ -24,67 +24,6 @@ const CusdisComponent = dynamic(
   { ssr: false }
 );
 
-  useEffect(() => {
-    if (
-      localStorage.theme === "dark" ||
-      (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
-    ) {
-      document.documentElement.classList.add("dark");
-      setTheme("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      setTheme("light");
-    }
-  }, [theme]);
-
-  useEffect(() => {
-    const handleThemeChange = (e) => {
-      toggleTheme(e.matches ? "light" : "dark");
-    };
-    window
-      .matchMedia("(prefers-color-scheme: dark)")
-      .addEventListener("change", handleThemeChange);
-    return window.removeEventListener("change", handleThemeChange);
-  }, []);
-
-  const toggleTheme = (theme) => {
-    if (theme === "dark") {
-      document.documentElement.classList.remove("dark");
-      setTheme("light");
-      localStorage.theme = "light";
-    } else {
-      document.documentElement.classList.add("dark");
-      setTheme("dark");
-      localStorage.theme = "dark";
-    }
-  };
-
-  return (
-    <div className="flex items-center flex-shrink-0">
-      <Head>
-        <meta
-          name="theme-color"
-          content={
-            theme === "dark" ? BLOG.darkBackground : BLOG.lightBackground
-          }
-        />
-      </Head>
-      <ul className="flex flex-row">
-        {links.map(
-          (link) =>
-            link.show && (
-              <li
-                key={link.id}
-                className="flex items-center ml-4 text-black dark:text-gray-50 nav"
-              >
-                <Link href={link.to}>
-                  <a>{link.name}</a>
-                </Link>
-              </li>
-            )
-        )}
-      </ul>
 
 
 const Comments = ({ frontMatter }) => {
