@@ -24,8 +24,6 @@ const CusdisComponent = dynamic(
   { ssr: false }
 );
 
-
-
 const Comments = ({ frontMatter }) => {
   const router = useRouter();
   return (
