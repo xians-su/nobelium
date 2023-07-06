@@ -33,7 +33,6 @@ const Footer = ({ fullWidth }) => {
 								<path d="M14.8431 8.27271L20.7772 18.4545H8.90918L14.8431 8.27271Z" fill="black" />
 							</g>
 						</svg>Vercel
-					        <a rel="me" href="https://mastodon.social/@Xians"> </a>
 					</a>
 					{/* <Vercel /> */}
 				</div>
