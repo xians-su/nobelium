@@ -35,7 +35,6 @@ const Footer = ({ fullWidth }) => {
 						</svg>Vercel
 					</a>
 					{/* <Vercel /> */}
-                                        <a rel="me" href="https://mastodon.social/@Xians"> </a>
 				</div>
 			</div>
 		</div>
