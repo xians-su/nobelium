@@ -19,7 +19,7 @@ const BLOG = {
   ogImageGenerateURL: 'https://raw.githubusercontent.com/xians-su/nobelium-notion-blog/main/public/webcover.png',
   socialLink: 'https://hi.xians.su',
   seo: {
-    keywords: ['xians', 'Xians Su', '慢叨'],
+    keywords: ['xians', 'Xians Su', 'slowmur', '慢叨'],
     googleSiteVerification: '' // Remove the value or replace it with your own google site verification code
   },
   notionPageId: process.env.NOTION_PAGE_ID, // DO NOT CHANGE THIS！！！
