@@ -17,7 +17,7 @@ const BLOG = {
   showArchive: true,
   autoCollapsedNavBar: false, // The automatically collapsed navigation bar
   ogImageGenerateURL: 'https://raw.githubusercontent.com/xians-su/nobelium-notion-blog/main/public/webcover.png',
-  socialLink: 'https://hi.xians.su',
+  socialLink: 'https://xians.su',
   seo: {
     keywords: ['xians', 'Xians Su', 'slowmur', '慢叨'],
     googleSiteVerification: '' // Remove the value or replace it with your own google site verification code
