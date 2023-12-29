@@ -1,9 +1,9 @@
 const BLOG = {
-  title: 'Xians | 慢叨',
+  title: '慢叨 Slowmur | Xians Su',
   author: 'Xians Su',
   email: 'hi@xians.su',
-  link: 'https://blog.xians.su',
-  description: '不時嘮叨，但盡量言之有物',
+  link: 'https://slowmur.com',
+  description: '不時嘮叨，盡量言之有物',
   lang: 'en-US', // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES']
   appearance: 'dark', // ['light', 'dark', 'auto'],
   font: 'sans-serif', // ['sans-serif', 'serif']
@@ -20,7 +20,7 @@ const BLOG = {
   socialLink: 'https://xians.su',
   seo: {
     keywords: ['xians', 'Xians Su', 'slowmur', '慢叨'],
-    googleSiteVerification: '' // Remove the value or replace it with your own google site verification code
+    googleSiteVerification: '_1A8LqqSKVpDRvIVBJIzizKL9y5T7poSIDkc8TbS5m0' // Remove the value or replace it with your own google site verification code
   },
   notionPageId: process.env.NOTION_PAGE_ID, // DO NOT CHANGE THIS！！！
   notionAccessToken: process.env.NOTION_ACCESS_TOKEN, // Useful if you prefer not to make your database public
