@@ -152,7 +152,12 @@ const Header = ({ navBarTitle, fullWidth }) => {
           <Link href="/">
             <a aria-label={BLOG.title}>
               <div className='h-6'>
-                <Twemoji emoji={'💬'} size={28} />
+                <Image
+                  src='/top.png'
+                  width={26}
+                  height={26}
+                  alt='xians'
+                />
               </div>
             </a>
           </Link>
