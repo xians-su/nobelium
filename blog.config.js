@@ -1,5 +1,5 @@
 const BLOG = {
-  title: '慢叨 Slowmur | Xians Su',
+  title: '慢叨 Slowmur.com',
   author: 'Xians Su',
   email: 'hi@xians.su',
   link: 'https://slowmur.com',
