@@ -151,7 +151,7 @@ const Header = ({ navBarTitle, fullWidth }) => {
         <div className="flex items-center">
           <Link href="/">
             <a aria-label={BLOG.title}>
-              <div className="min-w-max">
+              <div className="h-6">
                 <Twemoji emoji={'💬'} size={28} />
               </div>
             </a>
