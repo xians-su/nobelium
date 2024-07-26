@@ -148,30 +148,22 @@ const Header = ({ navBarTitle, fullWidth }) => {
         id="sticky-nav"
         ref={navRef}
       >
-        <div className="flex items-center">
-          <Link href="/">
-            <a aria-label={BLOG.title}>
-              <div className='h-6'>
-                <Image
-                  src='/top.png'
-                  width={26}
-                  height={26}
-                  alt='xians'
-                />
-              </div>
-            </a>
-          </Link>
-          {navBarTitle ? (
-            <p className="ml-4 font-medium text-day dark:text-night header-name">
-              {navBarTitle}
-            </p>
-          ) : (
-            <p className="ml-4 font-medium text-day dark:text-night header-name">
-              {BLOG.title},{" "}
-              <span className="font-normal">{BLOG.description}</span>
-            </p>
-          )}
-        </div>
+<div className="flex items-center">
+  <Link href="/">
+    <a aria-label={BLOG.title}>
+      <div className='h-6 w-6 text-xl'>💬</div>  {/* Emoji logo */}
+    </a>
+  </Link>
+  {navBarTitle ? (
+    <p className="ml-4 font-medium text-day dark:text-night header-name">
+      {navBarTitle}
+    </p>
+  ) : (
+    <p className="ml-4 font-medium text-day dark:text-night header-name">
+      {BLOG.title}, <span className="font-normal">{BLOG.description}</span>
+    </p>
+  )}
+</div>
         <NavBar />
       </div>
     </>
